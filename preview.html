@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYR Transportes SpA - Transporte de Carga Nacional</title>
+  
+  <!-- Google Fonts - Distintivas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset y base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --primary: #E6B85C;
+      --secondary: #1F2A33;
+      --background: #FFFFFF;
+      --text: #1A1A1A;
+      --cta: #D9A441;
+      --gray-light: #F8F9FA;
+      --gray-medium: #E9ECEF;
+      --gray-text: #6C757D;
+    }
+    
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .animate-fade-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+    
+    .animate-fade-left {
+      animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+    
+    .animate-scale {
+      animation: scaleIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+    
+    .animate-slide-right {
+      animation: slideInRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+    
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+    
+    img { max-width: 100%; height: auto; display: block; }
+    
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    
+    /* Header Minimalista */
+    header {
+      background: var(--background);
+      padding: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+    
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 1.35rem;
+    }
+    
+    .logo span {
+      color: var(--primary);
+    }
+    
+    nav { display: none; }
+    
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--cta);
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .btn:hover {
+      background: var(--cta);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(230, 184, 92, 0.3);
+    }
+    
+    .btn-secondary {
+      background: var(--secondary);
+      color: var(--background);
+    }
+    
+    .btn-secondary:hover {
+      background: #2a3844;
+      box-shadow: 0 4px 12px rgba(31, 42, 51, 0.2);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--secondary);
+      color: var(--secondary);
+    }
+    
+    .btn-outline:hover {
+      background: var(--secondary);
+      color: var(--background);
+      box-shadow: none;
+    }
+    
+    .btn-sm {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.85rem;
+    }
+    
+    /* Hero Limpio con Atmósfera */
+    .hero {
+      background: var(--gray-light);
+      padding-top: 72px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Gradient mesh atmosférico */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 60%;
+      height: 80%;
+      background: radial-gradient(ellipse, rgba(230, 184, 92, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -15%;
+      width: 50%;
+      height: 70%;
+      background: radial-gradient(ellipse, rgba(31, 42, 51, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    
+    /* Noise texture overlay */
+    .hero-noise {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.025;
+      pointer-events: none;
+    }
+    
+    .hero-grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .hero-content {
+      padding: 3rem 0;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--background);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    .hero-badge span {
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+    
+    .hero h1 {
+      font-size: 2.25rem;
+      color: var(--secondary);
+      margin-bottom: 1.25rem;
+    }
+    
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray-text);
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .hero-image {
+      display: none;
+    }
+    
+    .hero-image img {
+      border-radius: 24px;
+      box-shadow: 
+        0 25px 50px rgba(0,0,0,0.15),
+        0 10px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      /* Diagonal clip para romper monotonía */
+      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 8%);
+    }
+    
+    /* Decorative element */
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: 100px;
+      height: 100px;
+      background: var(--primary);
+      border-radius: 20px;
+      z-index: -1;
+      opacity: 0.6;
+    }
+    
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      width: 70px;
+      height: 70px;
+      border: 3px solid var(--secondary);
+      border-radius: 16px;
+      z-index: -1;
+    }
+    
+    .hero-image-wrapper {
+      position: relative;
+    }
+    
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-medium);
+    }
+    
+    .hero-feature {
+      text-align: center;
+    }
+    
+    .hero-feature strong {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    
+    .hero-feature span {
+      font-size: 0.8rem;
+      color: var(--gray-text);
+    }
+    
+    /* Secciones */
+    section {
+      padding: 5rem 1.25rem;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    
+    .section-header h2 {
+      font-size: 1.75rem;
+      color: var(--secondary);
+      margin-bottom: 0.75rem;
+    }
+    
+    .section-header p {
+      color: var(--gray-text);
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+    
+    /* Servicios Cards con entrada animada */
+    .servicios {
+      background: var(--background);
+      position: relative;
+    }
+    
+    /* Subtle pattern background */
+    .servicios::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(230, 184, 92, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(31, 42, 51, 0.04) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    
+    .servicios-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    
+    .servicio-card {
+      background: var(--background);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      border: 1px solid var(--gray-medium);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Accent line animada */
+    .servicio-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--cta));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    
+    .servicio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-color: transparent;
+    }
+    
+    .servicio-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .servicio-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--cta) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    
+    .servicio-card h3 {
+      color: var(--secondary);
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .servicio-card p {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    /* Cobertura con atmósfera */
+    .cobertura {
+      background: var(--secondary);
+      color: var(--background);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cobertura::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at 10% 20%, rgba(230, 184, 92, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    
+    /* Noise overlay */
+    .cobertura::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.02;
+      pointer-events: none;
+    }
+    
+    .cobertura .section-header h2 {
+      color: var(--background);
+    }
+    
+    .cobertura .section-header p {
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .cobertura-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    
+    .zona-card {
+      background: rgba(255,255,255,0.05);
+      padding: 1.75rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .zona-card h3 {
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .zona-card ul {
+      list-style: none;
+    }
+    
+    .zona-card li {
+      padding: 0.4rem 0;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .zona-card li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    
+    /* Por qué elegirnos */
+    .porque {
+      background: var(--gray-light);
+    }
+    
+    .porque-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+    
+    .porque-card {
+      background: var(--background);
+      padding: 1.5rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border: 1px solid var(--gray-medium);
+      transition: all 0.2s ease;
+    }
+    
+    .porque-card:hover {
+      border-color: var(--primary);
+    }
+    
+    .porque-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gray-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    
+    .porque-card h3 {
+      font-size: 1rem;
+      color: var(--secondary);
+      margin-bottom: 0.35rem;
+    }
+    
+    .porque-card p {
+      font-size: 0.9rem;
+      color: var(--gray-text);
+      line-height: 1.6;
+    }
+    
+    /* Flota */
+    .flota {
+      background: var(--background);
+    }
+    
+    .flota-content {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    .flota-gallery {
+      display: grid;
+      gap: 1rem;
+    }
+    
+    .flota-img {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .flota-img img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    
+    .flota-img:hover img {
+      transform: scale(1.03);
+    }
+    
+    .flota-info {
+      background: var(--gray-light);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    
+    .flota-info h3 {
+      color: var(--secondary);
+      font-size: 1.15rem;
+      margin-bottom: 1.25rem;
+    }
+    
+    .flota-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+    
+    .flota-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    
+    .flota-list li::before {
+      content: '✓';
+      width: 24px;
+      height: 24px;
+      background: var(--primary);
+      color: var(--secondary);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    
+    /* Contacto */
+    .contacto {
+      background: var(--gray-light);
+    }
+    
+    .contacto-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    .contacto-form-wrapper {
+      background: var(--background);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    
+    .contacto-form-wrapper h3 {
+      color: var(--secondary);
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contacto-form-wrapper > p {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
+    
+    .form-row {
+      display: grid;
+      gap: 1rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--secondary);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background: var(--gray-light);
+      border: 2px solid transparent;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+    
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--gray-text);
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: var(--background);
+    }
+    
+    .contacto-info {
+      padding: 1rem 0;
+    }
+    
+    .contacto-info h3 {
+      color: var(--secondary);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    .contacto-info > p {
+      color: var(--gray-text);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    
+    .info-item {
+      margin-bottom: 1.75rem;
+    }
+    
+    .info-item h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+    }
+    
+    .placeholder {
+      display: block;
+      background: rgba(230, 184, 92, 0.15);
+      border: 1px dashed var(--primary);
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      font-style: italic;
+      color: var(--cta);
+      font-size: 0.9rem;
+      margin: 0.3rem 0;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--secondary);
+      color: var(--background);
+      padding: 4rem 1.25rem 1.5rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-brand .logo {
+      margin-bottom: 1rem;
+    }
+    
+    .footer-brand p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 280px;
+    }
+    
+    .footer-section h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section li {
+      margin-bottom: 0.6rem;
+    }
+    
+    .footer-section a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-section a:hover {
+      color: var(--primary);
+    }
+    
+    .footer-bottom {
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    
+    .footer-bottom p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+    
+    /* Mobile menu */
+    .menu-btn {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    .menu-btn span {
+      width: 22px;
+      height: 2px;
+      background: var(--secondary);
+      border-radius: 2px;
+    }
+    
+    /* Responsive */
+    @media (min-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      nav { display: block; }
+      .menu-btn { display: none; }
+      
+      .hero h1 { font-size: 2.75rem; }
+      
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+      
+      .hero-image { display: block; }
+      
+      .servicios-grid { grid-template-columns: repeat(3, 1fr); }
+      .cobertura-grid { grid-template-columns: repeat(3, 1fr); }
+      .porque-grid { grid-template-columns: repeat(2, 1fr); }
+      .flota-gallery { grid-template-columns: repeat(3, 1fr); }
+      
+      .contacto-grid {
+        grid-template-columns: 1fr 1.2fr;
+        align-items: start;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      }
+      
+      section { padding: 6rem 1.25rem; }
+    }
+    
+    @media (min-width: 1024px) {
+      .hero h1 { font-size: 3rem; }
+      .section-header h2 { font-size: 2rem; }
+      .porque-grid { grid-template-columns: repeat(3, 1fr); }
+      section { padding: 7rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">MYR<span>.</span> Transportes</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#cobertura">Cobertura</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#flota">Flota</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="#contacto" class="btn btn-sm">Cotizar Ahora</a>
+      <button class="menu-btn" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-noise"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge animate-fade-up">
+            <span></span>
+            Transporte de carga nacional
+          </div>
+          <h1 class="animate-fade-up delay-1">Llevamos tu carga de Arica a Punta Arenas</h1>
+          <p class="animate-fade-up delay-2">Acompañamos cada despacho de inicio a fin con seguimiento GPS, seguro de carga y atención personalizada.</p>
+          <div class="hero-buttons animate-fade-up delay-3">
+            <a href="#contacto" class="btn">Solicitar Cotización</a>
+            <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
+          </div>
+          <div class="hero-features animate-fade-up delay-4">
+            <div class="hero-feature">
+              <strong>10</strong>
+              <span>Unidades propias</span>
+            </div>
+            <div class="hero-feature">
+              <strong>12</strong>
+              <span>Ciudades</span>
+            </div>
+            <div class="hero-feature">
+              <strong>UF 2.500</strong>
+              <span>Seguro</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image animate-slide-right delay-2">
+          <div class="hero-image-wrapper">
+            <img src="img/1.jpg" alt="Flota MYR Transportes">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="servicios">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nuestros Servicios</h2>
+        <p>Soluciones de transporte y logística diseñadas para las necesidades de tu empresa.</p>
+      </div>
+      <div class="servicios-grid">
+        <div class="servicio-card">
+          <div class="servicio-icon">🚛</div>
+          <h3>Transporte Terrestre</h3>
+          <p>Traslado de carga a lo largo de todo Chile, desde Arica hasta Punta Arenas. Flota propia con capacidad de 5 a 12 toneladas.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon">📦</div>
+          <h3>Distribución y Reparto</h3>
+          <p>Servicios de acopio, retiro, entrega y distribución en Santiago y alrededores. Nos adaptamos a tus necesidades.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon">📋</div>
+          <h3>Logística Consolidada</h3>
+          <p>Despachos semanales o dos veces por semana. Servicios express y especiales según tu requerimiento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cobertura -->
+  <section id="cobertura" class="cobertura">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cobertura Nacional</h2>
+        <p>Puntos de apoyo estratégicos en las principales ciudades del país.</p>
+      </div>
+      <div class="cobertura-grid">
+        <div class="zona-card">
+          <h3>Zona Norte</h3>
+          <ul>
+            <li>Arica</li>
+            <li>Iquique</li>
+            <li>Antofagasta</li>
+            <li>Copiapó</li>
+            <li>Coquimbo</li>
+          </ul>
+        </div>
+        <div class="zona-card">
+          <h3>Zona Centro</h3>
+          <ul>
+            <li>Santiago</li>
+            <li style="font-size: 0.85rem; opacity: 0.7;">Centro de acopio y distribución</li>
+          </ul>
+        </div>
+        <div class="zona-card">
+          <h3>Zona Sur</h3>
+          <ul>
+            <li>Curicó</li>
+            <li>Concepción</li>
+            <li>Puerto Montt</li>
+            <li>Coyhaique</li>
+            <li>Punta Arenas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué elegirnos -->
+  <section id="nosotros" class="porque">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por qué MYR Transportes?</h2>
+        <p>Razones por las que empresas confían en nosotros para sus despachos.</p>
+      </div>
+      <div class="porque-grid">
+        <div class="porque-card">
+          <div class="porque-icon">🚚</div>
+          <div>
+            <h3>Flota Propia</h3>
+            <p>10 unidades propias: semi planos, furgones y sider. Sin intermediarios.</p>
+          </div>
+        </div>
+        <div class="porque-card">
+          <div class="porque-icon">📍</div>
+          <div>
+            <h3>Seguimiento GPS</h3>
+            <p>Monitoreo en tiempo real de tu carga durante todo el trayecto.</p>
+          </div>
+        </div>
+        <div class="porque-card">
+          <div class="porque-icon">🛡️</div>
+          <div>
+            <h3>Seguro de Carga</h3>
+            <p>Cobertura de hasta UF 2.500 para tu tranquilidad.</p>
+          </div>
+        </div>
+        <div class="porque-card">
+          <div class="porque-icon">👷</div>
+          <div>
+            <h3>Equipo Capacitado</h3>
+            <p>Personal profesional, adscritos a Mutual de Seguridad.</p>
+          </div>
+        </div>
+        <div class="porque-card">
+          <div class="porque-icon">🤝</div>
+          <div>
+            <h3>Atención Personalizada</h3>
+            <p>Responsables de comercial y operaciones asignados a tu cuenta.</p>
+          </div>
+        </div>
+        <div class="porque-card">
+          <div class="porque-icon">🏗️</div>
+          <div>
+            <h3>Equipamiento Extra</h3>
+            <p>Vehículos de apoyo y grúa horquilla disponibles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flota -->
+  <section id="flota" class="flota">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nuestra Flota</h2>
+        <p>Vehículos modernos y versátiles para todo tipo de carga.</p>
+      </div>
+      <div class="flota-content">
+        <div class="flota-gallery">
+          <div class="flota-img">
+            <img src="img/2.jpg" alt="Camión MYR Transportes">
+          </div>
+          <div class="flota-img">
+            <img src="img/3.jpg" alt="Flota MYR Transportes">
+          </div>
+          <div class="flota-img">
+            <img src="img/4.jpg" alt="Vehículo de carga MYR">
+          </div>
+        </div>
+        <div class="flota-info">
+          <h3>Especificaciones de la Flota</h3>
+          <ul class="flota-list">
+            <li>Semi planos para carga sobredimensionada</li>
+            <li>Furgones cerrados para carga protegida</li>
+            <li>Sider para carga y descarga lateral</li>
+            <li>Capacidad: 5 a 12 toneladas</li>
+            <li>Grúa horquilla disponible</li>
+            <li>Vehículos de apoyo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contacto">
+    <div class="container">
+      <div class="section-header">
+        <h2>Solicita tu Cotización</h2>
+        <p>Cuéntanos sobre tu carga y te enviamos una propuesta a medida.</p>
+      </div>
+      <div class="contacto-grid">
+        <div class="contacto-info">
+          <h3>Contacto Directo</h3>
+          <p>Nuestro equipo está listo para atender tus consultas y darte el mejor servicio.</p>
+          
+          <div class="info-item">
+            <h4>Área Comercial</h4>
+            <span class="placeholder">[COMPLETAR: teléfono comercial]</span>
+            <span class="placeholder">[COMPLETAR: email comercial]</span>
+          </div>
+          
+          <div class="info-item">
+            <h4>Operaciones</h4>
+            <span class="placeholder">[COMPLETAR: teléfono operaciones]</span>
+            <span class="placeholder">[COMPLETAR: email operaciones]</span>
+          </div>
+          
+          <div class="info-item">
+            <h4>Dirección</h4>
+            <span class="placeholder">[COMPLETAR: dirección física]</span>
+          </div>
+        </div>
+        
+        <div class="contacto-form-wrapper">
+          <h3>Formulario de Cotización</h3>
+          <p>Completa tus datos y te contactaremos pronto.</p>
+          
+          <form onsubmit="event.preventDefault(); alert('Formulario de demostración. En producción se conectará al sistema de contacto.');">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre / Empresa</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre o empresa" required>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="correo@empresa.cl" required>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Descripción de tu carga</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Tipo de carga, origen, destino, frecuencia..." required></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">Enviar Solicitud</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">MYR<span>.</span> Transportes</div>
+          <p>Transporte de carga a nivel nacional con cobertura de Arica a Punta Arenas. Seguridad, seguimiento y atención personalizada.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#cobertura">Cobertura</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#flota">Flota</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Transporte</a></li>
+            <li><a href="#servicios">Distribución</a></li>
+            <li><a href="#servicios">Logística</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <ul>
+            <li><span class="placeholder" style="font-size: 0.8rem; padding: 0.4rem 0.75rem;">[COMPLETAR]</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 MYR Transportes SpA. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
