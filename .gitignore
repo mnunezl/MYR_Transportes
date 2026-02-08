@@ -1,49 +1,30 @@
-# Dependencies
-node_modules/
-.pnpm-store/
-
-# Build output
+# build output
 dist/
-.output/
+# generated types
 .astro/
 
-# Environment variables
-.env
-.env.local
-.env.*.local
+# dependencies
+node_modules/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
-.idea/
-*.swp
-*.swo
-*~
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Cache
-.cache/
-.parcel-cache/
-.turbo/
 
-# Testing
-coverage/
+# environment variables
+.env
+.env.production
 
-# Misc
-*.local
-.vercel
-.netlify
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# VS Code settings
+.vscode/
 
 # Project documentation (internal)
 docs/
@@ -52,5 +33,5 @@ client.md
 context.md
 stack.md
 
-# Original images backup
-img/originals/
+# Backups
+index-backup.html

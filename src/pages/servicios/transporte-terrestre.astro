@@ -1,0 +1,223 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const pageTitle = "Transporte Terrestre de Carga | MYR Transportes SpA";
+const pageDescription = "Transporte de carga terrestre a todo Chile. De Arica a Punta Arenas con flota propia, GPS en tiempo real y seguro de carga UF 2.500.";
+
+const otrosServicios = [
+  { nombre: "Logística y Acopio", url: "/servicios/logistica-acopio", subtitulo: "Bodegaje" },
+  { nombre: "Distribución Regional", url: "/servicios/distribucion-regional", subtitulo: "Last-mile" },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  
+  <main class="mx-auto w-full max-w-7xl px-4 md:px-10 py-8">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="flex flex-wrap gap-2 mb-6">
+      <a class="text-secondary/50 text-sm font-medium hover:text-primary transition-colors" href="/">Inicio</a>
+      <span class="text-secondary/30 text-sm font-medium">/</span>
+      <span class="text-secondary/50 text-sm font-medium">Servicios</span>
+      <span class="text-secondary/30 text-sm font-medium">/</span>
+      <span class="text-secondary text-sm font-semibold">Transporte Terrestre</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="mb-10 overflow-hidden rounded-xl shadow-lg">
+      <div 
+        class="bg-cover bg-center flex flex-col justify-end min-h-[400px] relative"
+        style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 60%), url('/img/transporte1.jpg');"
+      >
+        <div class="p-8 md:p-12 max-w-3xl">
+          <span class="inline-block bg-primary text-secondary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider mb-4">
+            Servicio Principal
+          </span>
+          <h1 class="text-white text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+            Transporte Terrestre de Carga
+          </h1>
+          <p class="text-white/90 text-lg max-w-xl">
+            Conectamos Chile de norte a sur con nuestra flota propia, garantizando seguridad y puntualidad en cada envío.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Main Content Column -->
+      <div class="lg:col-span-8 flex flex-col gap-8">
+        <section>
+          <h2 class="text-2xl font-bold text-secondary mb-4">Cobertura Nacional de Carga</h2>
+          <div class="max-w-none">
+            <p class="text-secondary/80 text-lg leading-relaxed mb-6">
+              En MYR Transportes SpA ofrecemos servicios de transporte terrestre de carga a lo largo de todo Chile, desde Arica hasta Punta Arenas. Nuestra flota propia está equipada con la última tecnología en rastreo GPS, permitiendo monitoreo en tiempo real las 24 horas del día.
+            </p>
+            <p class="text-secondary/80 text-lg leading-relaxed">
+              Trabajamos con diversos tipos de carga: materiales de construcción, productos retail, maquinaria industrial, mudanzas empresariales y más. Cada envío cuenta con seguro de carga de UF 2.500, brindando tranquilidad total a nuestros clientes.
+            </p>
+          </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6">
+          <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary/20 text-primary flex items-center justify-center rounded-lg mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Flota Propia</h3>
+            <p class="text-sm text-secondary/70">Camiones, semi-remolques y furgones propios con mantenimiento preventivo constante.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary/20 text-primary flex items-center justify-center rounded-lg mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">GPS 24/7</h3>
+            <p class="text-sm text-secondary/70">Seguimiento satelital en tiempo real de tu carga durante todo el trayecto.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary/20 text-primary flex items-center justify-center rounded-lg mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Cobertura Nacional</h3>
+            <p class="text-sm text-secondary/70">De Arica a Punta Arenas, llegamos a todas las regiones del país.</p>
+          </div>
+        </section>
+
+        <!-- Trust Elements Section -->
+        <section class="bg-secondary rounded-xl p-8 text-white flex flex-col md:flex-row items-center gap-8 md:gap-12 overflow-hidden relative">
+          <div class="absolute right-0 top-0 opacity-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-36 h-36 rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+          </div>
+          <div class="flex-1 z-10">
+            <h3 class="text-2xl font-bold mb-4 text-primary">Seguridad y Respaldo</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+                <div>
+                  <p class="font-bold text-lg">Seguro de Carga UF 2,500</p>
+                  <p class="text-white/70 text-sm">Respaldo total ante siniestros o pérdidas accidentales.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+                <div>
+                  <p class="font-bold text-lg">Monitoreo GPS 24/7</p>
+                  <p class="text-white/70 text-sm">Seguimiento en tiempo real para todas las unidades de la flota.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shrink-0 w-full md:w-auto z-10">
+            <div class="bg-white/10 backdrop-blur px-6 py-6 rounded-lg border border-white/20 text-center">
+              <p class="text-primary font-bold text-4xl mb-1">100%</p>
+              <p class="text-xs uppercase tracking-widest text-white/60">Tasa de Entrega</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar CTA -->
+      <aside class="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
+        <div class="bg-white border-2 border-primary rounded-xl p-6 shadow-xl">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-full text-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-secondary">Contactar Operaciones</h3>
+          </div>
+          <p class="text-sm text-secondary/70 mb-6 leading-relaxed">
+            ¿Necesitas coordinar un envío o conocer nuestras tarifas? Nuestro equipo está listo para ayudarte.
+          </p>
+          <div class="space-y-4 mb-6">
+            <a class="flex items-center gap-4 p-4 rounded-lg bg-background-light hover:bg-gray-100 transition-colors" href="tel:+56948451915">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              <div>
+                <p class="text-xs text-secondary/50 uppercase font-bold tracking-tight">Teléfono Operaciones</p>
+                <p class="text-lg font-bold text-secondary">+56 9 4845 1915</p>
+              </div>
+            </a>
+            <a class="flex items-center gap-4 p-4 rounded-lg bg-background-light hover:bg-gray-100 transition-colors" href="tel:+56942660674">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              <div>
+                <p class="text-xs text-secondary/50 uppercase font-bold tracking-tight">Comercial - Luis Manriquez</p>
+                <p class="text-lg font-bold text-secondary">+56 9 4266 0674</p>
+              </div>
+            </a>
+          </div>
+          <a 
+            href="https://wa.me/56948451915?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio%20de%20transporte%20terrestre" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full flex items-center justify-center gap-3 bg-[#25d366] hover:bg-[#20bd5a] text-white font-extrabold py-4 rounded-lg transition-all shadow-md active:scale-95"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Enviar WhatsApp
+          </a>
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <p class="text-xs text-center text-secondary/40 uppercase font-bold mb-4">Horario de Atención</p>
+            <div class="flex justify-between text-sm">
+              <span class="text-secondary/70">Lun - Vie</span>
+              <span class="font-semibold">08:00 - 19:00</span>
+            </div>
+            <div class="flex justify-between text-sm mt-2">
+              <span class="text-secondary/70">Sábado</span>
+              <span class="font-semibold">09:00 - 14:00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Card -->
+        <div class="bg-primary/10 rounded-xl p-6 border border-primary/20">
+          <h4 class="font-bold text-secondary mb-3">Correo de Contacto</h4>
+          <p class="text-xs text-secondary/70">
+            Para cotizaciones por escrito, contáctenos a 
+            <a class="text-primary font-bold hover:underline" href="mailto:myrtransportes05@gmail.com">myrtransportes05@gmail.com</a>
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Otros Servicios -->
+    <section class="mt-16 pt-16 border-t border-gray-200">
+      <h2 class="text-2xl font-bold mb-8">Otros Servicios</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {otrosServicios.map(servicio => (
+          <a class="group p-6 rounded-lg bg-white border border-gray-100 hover:border-primary transition-all hover:shadow-md" href={servicio.url}>
+            <h4 class="font-bold text-lg group-hover:text-primary transition-colors">{servicio.nombre}</h4>
+            <p class="text-xs text-secondary/50 mt-1 uppercase">{servicio.subtitulo}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>

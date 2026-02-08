@@ -1,0 +1,51 @@
+---
+// Hero Component
+---
+
+<section class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="z-10">
+        <span class="inline-block py-1 px-3 rounded-full bg-primary/20 text-secondary font-bold text-xs tracking-wider uppercase mb-6 border border-primary/30">
+          Logística Nacional en Chile
+        </span>
+        <h1 class="text-5xl lg:text-7xl font-extrabold text-secondary leading-[1.1] mb-6">
+          Transporte de Carga de <span class="text-primary">Arica</span> a <span class="text-primary">Punta Arenas</span>
+        </h1>
+        <p class="text-lg text-gray-600 mb-8 max-w-xl leading-relaxed">
+          Profesionalismo y seguridad en cada ruta. Ofrecemos soluciones logísticas integrales con monitoreo constante y cobertura en todo el territorio chileno.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/cotizar" class="bg-primary hover:bg-yellow-500 text-secondary px-8 py-4 rounded-xl font-extrabold text-base transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined" aria-hidden="true">description</span>
+            Solicitar Cotización
+          </a>
+          <a href="#servicios" class="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white px-8 py-4 rounded-xl font-extrabold text-base transition-all text-center">
+            Ver Servicios
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -top-12 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+        <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-1">
+          <img 
+            src="/img/hero.jpg" 
+            alt="Camión de carga MYR Transportes - Flota propia para envíos a todo Chile" 
+            class="w-full h-[500px] object-cover"
+            width="600"
+            height="500"
+          >
+        </div>
+        <div class="absolute bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl flex items-center gap-4 border border-gray-100">
+          <div class="bg-green-100 p-2 rounded-full">
+            <span class="material-symbols-outlined text-green-600" aria-hidden="true">verified</span>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-tighter">Estado de Carga</p>
+            <p class="font-bold text-secondary">100% Monitoreado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

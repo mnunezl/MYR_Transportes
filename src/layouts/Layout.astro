@@ -1,0 +1,97 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "MYR Transportes SpA - Transporte de Carga a Todo Chile",
+  description = "Transporte de carga terrestre a todo Chile. De Arica a Punta Arenas. Flota propia con GPS en tiempo real y seguro UF 2.500. Cotiza gratis."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content={description}>
+  <meta name="keywords" content="transporte carga chile, transporte terrestre, envíos nacionales, logística chile, flota propia, carga terrestre, transporte de carga, envíos a regiones">
+  <meta name="author" content="MYR Transportes SpA">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://myrtransportes.cl/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myrtransportes.cl/">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content="https://myrtransportes.cl/img/og-image.jpg">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:site_name" content="MYR Transportes SpA">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://myrtransportes.cl/">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content="https://myrtransportes.cl/img/og-image.jpg">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#1a1a2e">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/Logo MyR.png">
+  <link rel="apple-touch-icon" href="/img/Logo MyR.png">
+  
+  <!-- Google Fonts - Preload críticos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MYR Transportes SpA",
+    "description": "Transporte de carga terrestre a todo Chile, de Arica a Punta Arenas. Flota propia con GPS en tiempo real.",
+    "url": "https://myrtransportes.cl",
+    "logo": "https://myrtransportes.cl/img/Logo MyR.png",
+    "image": "https://myrtransportes.cl/img/og-image.jpg",
+    "telephone": ["+56942660674", "+56948451915"],
+    "email": "myrtransportes05@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Doña Ines del Oliveto Lt.33, Calle las parcelas",
+      "addressLocality": "Talagante",
+      "addressRegion": "Región Metropolitana",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-33.629333",
+      "longitude": "-70.764333"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    "serviceType": ["Transporte de carga terrestre", "Distribución express", "Logística consolidada"],
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body class="bg-background-light text-secondary antialiased">
+  <slot />
+</body>
+</html>
